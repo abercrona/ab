@@ -7,35 +7,56 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 80px;
+            padding: 50px;
             background: #f5f5f5;
             color: #333;
         }
-        .link-title {
+        .button {
+            display: inline-block;
+            padding: 20px 50px;
+            font-size: 24px;
+            background: #FF5722;
+            color: #fff;
             text-decoration: none;
-            color: #FF5722;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(255,87,34,0.4);
+            transition: transform 0.2s, background 0.2s;
         }
-        .link-title:hover {
-            text-decoration: underline;
+        .button:hover {
+            background: #E64A19;
+            transform: scale(1.05);
         }
         .message {
             font-size: 16px;
-            margin-top: 30px;
+            margin-bottom: 30px;
             line-height: 1.5;
+        }
+        .gif {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <a class="link-title" href="https://forms.yandex.ru/cloud/687f8de690fa7b0a764e20d4/" target="_blank">
-        <h1>✨ Поделитесь своим мнением! ✨</h1>
-    </a>
+    <h1>✨ Поделитесь своим мнением! ✨</h1>
 
+        <!-- Кнопка для опроса -->
+    <a class="button" href="https://forms.yandex.ru/cloud/687f8de690fa7b0a764e20d4/" target="_blank">
+        Пройти опрос
+    </a>
+    
     <p class="message">
-        Дорогой коллега!<br>
-        Каждый день наша команда работает над тем, чтобы Дельта BI была удобным и полезным инструментом для вашей работы.<br>
-        Ваш отзыв поможет нам развивать систему так, чтобы она приносила максимум пользы.
+        Дорогой коллега,<br>
+        Каждый день наша команда работает над тем, чтобы Дельта BI был удобным и полезным инструментом для вашей работы.<br>
+        Ваш отзыв поможет нам развивать систему так, чтобы она приносила максимум пользы и радости в работе.  
     </p>
+
+
+    <!-- Гифка -->
+    <img class="gif" src="ВАША_ССЫЛКА_НА_ГИФ" alt="Гифка мотивация">
 
 </body>
 </html>
