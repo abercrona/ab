@@ -1,57 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Опрос Дельта BI</title>
+    <title>Дельта BI: Ваш отзыв важен!</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
             background: #f5f5f5;
+            color: #333;
         }
-        .knopka {
+        .button {
             display: inline-block;
             padding: 20px 50px;
             font-size: 24px;
             background: #FF5722;
-            color: white;
+            color: #fff;
             text-decoration: none;
             border-radius: 12px;
-            margin: 20px;
-            box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4);
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(255,87,34,0.4);
             transition: transform 0.2s, background 0.2s;
         }
-        .knopka:hover {
+        .button:hover {
             background: #E64A19;
             transform: scale(1.05);
         }
-        .text {
-            font-size: 18px;
-            color: #333;
-            margin-top: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        img {
-            max-width: 300px;
+        .message {
+            font-size: 16px;
             margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .gif {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <img src="d8048b85-cbd4-4828-928c-848bb34aa396.png" alt="Мотивирующая гифка">
-    
-    <div class="text">
-        Дорогой коллега,<br>
-        Мы не получили Ваш ответ. Ваш отклик очень важен, чтобы Дельта BI работал именно для Вас.
-    </div>
+    <h1>✨ Поделитесь своим мнением! ✨</h1>
 
-    <a class="knopka" href="https://forms.yandex.ru/cloud/687f8de690fa7b0a764e20d4/" target="_blank">
+    <p class="message">
+        Дорогой коллега,<br>
+        Каждый день наша команда работает над тем, чтобы Дельта BI был удобным и полезным инструментом для вашей работы.<br>
+        Ваш отзыв поможет нам развивать систему так, чтобы она приносила максимум пользы и радости в работе.  
+    </p>
+
+    <!-- Кнопка для опроса -->
+    <a class="button" href="https://forms.yandex.ru/cloud/687f8de690fa7b0a764e20d4/" target="_blank">
         Пройти опрос
     </a>
+
+    <!-- Гифка -->
+    <img class="gif" src="https://disk.yandex.ru/i/CEpH2HCJ9Mcm6w" alt="Гифка мотивация">
 
 </body>
 </html>
