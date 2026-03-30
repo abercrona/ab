@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навигация по разделам</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        /* Красивая карточка с кнопками */
+        .menu-container {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 2.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            background: linear-gradient(120deg, #fff, #a5f3fc);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .sub {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Сетка кнопок — ровно 5 штук */
+        .buttons-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Красивая кнопка */
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            padding: 1rem 1.8rem;
+            border-radius: 1.5rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+
+        /* Левая часть с иконкой и текстом */
+        .btn-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-left i {
+            font-size: 1.4rem;
+            width: 28px;
+            color: #7dd3fc;
+        }
+
+        /* Стрелка справа */
+        .arrow {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            transition: transform 0.2s;
+        }
+
+        /* Ховер эффект */
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover .arrow {
+            transform: translateX(4px);
+            opacity: 1;
+        }
+
+        /* Простой футер */
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #475569;
+        }
+
+        @media (max-width: 500px) {
+            .menu-container {
+                padding: 1.5rem;
+            }
+            .nav-btn {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.95rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>⚡ Навигация</h1>
+        <div class="sub">Нажми на кнопку — перейди в нужный раздел</div>
+
+        <div class="buttons-grid">
+            <!-- КНОПКА 1: FAQ -->
+            <a href="#" class="nav-btn" id="faq-link">
+                <div class="btn-left">
+                    <i class="fas fa-question-circle"></i>
+                    <span>FAQ</span>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- КНОПКА 2: Правила работы и разработки -->
+            <a href="#" class="nav-btn" id="rules-link">
+                <div class="btn-left">
+                    <i class="fas fa-gavel"></i>
+                    <span>Правила работы и разработки</span>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- КНОПКА 3: Тренинги -->
+            <a href="#" class="nav-btn" id="trainings-link">
+                <div class="btn-left">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <span>Тренинги</span>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- КНОПКА 4: Инструкции по разработке -->
+            <a href="#" class="nav-btn" id="instructions-link">
+                <div class="btn-left">
+                    <i class="fas fa-book-open"></i>
+                    <span>Инструкции по разработке</span>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- КНОПКА 5: Видео встреч комьюнити -->
+            <a href="#" class="nav-btn" id="videos-link">
+                <div class="btn-left">
+                    <i class="fas fa-video"></i>
+                    <span>Видео встреч комьюнити</span>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Font Awesome для иконок -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <script>
+        document.getElementById('faq-link').href = "https://disk.yandex.ru/i/WtQ176P4t6ro0A";
+        document.getElementById('rules-link').href = "https://disk.yandex.ru/d/ZbSXowj9kCz4ug";
+        document.getElementById('trainings-link').href = "https://disk.yandex.ru/d/aWKAnfdmj4UkFQ";
+        document.getElementById('instructions-link').href = "https://disk.yandex.ru/d/r72MA_Ypt1euwQ";
+        document.getElementById('videos-link').href = "https://disk.yandex.ru/d/v8TIYwOaVi9yDQ";
+        // =============================================
+    </script>
+</body>
+</html>
