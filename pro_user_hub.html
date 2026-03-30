@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: #535353; /* Новый цвет фона */
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -25,7 +25,7 @@
         .menu-container {
             max-width: 700px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.05);
+            background: #050021; /* Новый цвет плашки */
             backdrop-filter: blur(10px);
             border-radius: 2.5rem;
             padding: 2.5rem;
@@ -56,7 +56,7 @@
             gap: 1rem;
         }
 
-        /* Красивая кнопка */
+        /* Красивая кнопка с уменьшенным радиусом */
         .nav-btn {
             display: flex;
             align-items: center;
@@ -64,7 +64,7 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(4px);
             padding: 1rem 1.8rem;
-            border-radius: 1.5rem;
+            border-radius: 0.75rem; /* Радиус уменьшен примерно вполовину (было 1.5rem) */
             text-decoration: none;
             color: white;
             font-weight: 500;
@@ -94,17 +94,23 @@
             transition: transform 0.2s;
         }
 
-        /* Ховер эффект */
+        /* Ховер эффект с новым цветом #ffba1c */
         .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: #ffba1c; /* Новый цвет при наведении */
             border-color: rgba(255, 255, 255, 0.4);
             transform: translateX(5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: #050021; /* Цвет текста меняется для контраста */
+        }
+
+        .nav-btn:hover .btn-left i {
+            color: #050021; /* Иконки тоже меняют цвет при наведении */
         }
 
         .nav-btn:hover .arrow {
             transform: translateX(4px);
             opacity: 1;
+            color: #050021;
         }
 
         /* Простой футер */
@@ -121,6 +127,7 @@
             .nav-btn {
                 padding: 0.8rem 1.2rem;
                 font-size: 0.95rem;
+                border-radius: 0.6rem; /* Адаптивный радиус */
             }
             h1 {
                 font-size: 1.6rem;
@@ -130,8 +137,7 @@
 </head>
 <body>
     <div class="menu-container">
-        <h1>⚡ Навигация</h1>
-        <div class="sub">Нажми на кнопку — перейди в нужный раздел</div>
+        <h1>⚡ Полезные материалы</h1>
 
         <div class="buttons-grid">
             <!-- КНОПКА 1: FAQ -->
