@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #535353; /* Новый цвет фона */
+            background: #535353;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -21,11 +21,10 @@
             padding: 2rem;
         }
 
-        /* Красивая карточка с кнопками */
         .menu-container {
             max-width: 700px;
             width: 100%;
-            background: #050021; /* Новый цвет плашки */
+            background: #050021;
             backdrop-filter: blur(10px);
             border-radius: 2.5rem;
             padding: 2.5rem;
@@ -34,7 +33,7 @@
         }
 
         h1 {
-            font-size: 2rem; /* чуть уменьшил (было 2.2rem) */
+            font-size: 2rem;
             font-weight: 600;
             background: linear-gradient(120deg, #fff, #a5f3fc);
             background-clip: text;
@@ -46,42 +45,40 @@
         .sub {
             color: #94a3b8;
             margin-bottom: 2rem;
-            font-size: 0.9rem; /* чуть уменьшил */
+            font-size: 0.9rem;
         }
 
-        /* Сетка кнопок — ровно 5 штук */
         .buttons-grid {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
 
-        /* Красивая кнопка с уменьшенным радиусом */
+        /* Обычная кнопка */
         .nav-btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(4px);
-            padding: 0.9rem 1.5rem; /* чуть уменьшил вертикальный отступ */
+            padding: 0.9rem 1.5rem;
             border-radius: 0.75rem;
             text-decoration: none;
             color: white;
             font-weight: 500;
-            font-size: 0.98rem; /* уменьшил шрифт (было 1.1rem) */
+            font-size: 0.98rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
             cursor: pointer;
-            text-align: left; /* фикс: при переносе строки текст не центрируется */
+            text-align: left;
         }
 
-        /* Левая часть с иконкой и текстом */
         .btn-left {
             display: flex;
             align-items: center;
             gap: 1rem;
             text-align: left;
-            flex: 1; /* позволяет тексту занимать доступное место */
+            flex: 1;
         }
 
         .btn-left span {
@@ -90,22 +87,20 @@
         }
 
         .btn-left i {
-            font-size: 1.25rem; /* чуть уменьшил иконки */
+            font-size: 1.25rem;
             width: 26px;
             color: #7dd3fc;
-            flex-shrink: 0; /* иконка не сжимается при зуме */
+            flex-shrink: 0;
         }
 
-        /* Стрелка справа */
         .arrow {
-            font-size: 1rem; /* чуть уменьшил */
+            font-size: 1rem;
             opacity: 0.7;
             transition: transform 0.2s;
             flex-shrink: 0;
             margin-left: 12px;
         }
 
-        /* Ховер эффект с новым цветом #ffba1c */
         .nav-btn:hover {
             background: #ffba1c;
             border-color: rgba(255, 255, 255, 0.4);
@@ -124,58 +119,137 @@
             color: #050021;
         }
 
-        /* Простой футер */
+        /* Контейнер для двух независимых кнопок */
+        .double-button-container {
+            display: flex;
+            gap: 0.75rem;
+            width: 100%;
+        }
+
+        /* Каждая половина - самостоятельная кнопка */
+        .half-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            padding: 0.9rem 1rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 0.98rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            gap: 0.75rem;
+        }
+
+        .half-btn-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+        }
+
+        .half-btn-left i {
+            font-size: 1.25rem;
+            width: 26px;
+            color: #7dd3fc;
+            flex-shrink: 0;
+        }
+
+        .half-btn-left span {
+            text-align: left;
+            line-height: 1.3;
+        }
+
+        .half-arrow {
+            font-size: 1rem;
+            opacity: 0.7;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        /* Ховер для левой половины */
+        .half-btn:first-child:hover {
+            background: #ffba1c;
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateX(3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: #050021;
+        }
+
+        /* Ховер для правой половины */
+        .half-btn:last-child:hover {
+            background: #ffba1c;
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateX(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: #050021;
+        }
+
+        .half-btn:hover .half-btn-left i {
+            color: #050021;
+        }
+
+        .half-btn:hover .half-arrow {
+            transform: translateX(4px);
+            opacity: 1;
+            color: #050021;
+        }
+
         .footer-note {
             margin-top: 2rem;
             font-size: 0.7rem;
             color: #475569;
         }
 
-        /* защита от центрирования при переносе на узких экранах или зуме */
         @media (max-width: 550px) {
             .menu-container {
                 padding: 1.5rem;
             }
-            .nav-btn {
-                padding: 0.7rem 1.2rem;
+            .nav-btn, .half-btn {
+                padding: 0.7rem 1rem;
                 font-size: 0.88rem;
-                border-radius: 0.6rem;
             }
-            .btn-left {
+            .btn-left, .half-btn-left {
                 gap: 0.8rem;
             }
-            .btn-left i {
+            .btn-left i, .half-btn-left i {
                 font-size: 1.1rem;
                 width: 24px;
             }
             h1 {
                 font-size: 1.7rem;
             }
-            .sub {
-                font-size: 0.8rem;
-            }
-            .arrow {
+            .arrow, .half-arrow {
                 font-size: 0.9rem;
+            }
+            .double-button-container {
+                gap: 0.5rem;
             }
         }
 
-        /* при переносе текста на две строки — иконка выравнивается по верхнему краю, текст слева */
         @media (max-width: 480px) {
-            .btn-left {
+            .btn-left, .half-btn-left {
                 align-items: flex-start;
             }
-            .btn-left span {
+            .btn-left span, .half-btn-left span {
                 white-space: normal;
                 word-break: break-word;
             }
+            .half-btn {
+                padding: 0.7rem 0.8rem;
+            }
         }
 
-        /* гарантия левого выравнивания для всех состояний */
-        .nav-btn, .btn-left, .btn-left span {
+        .nav-btn, .btn-left, .btn-left span, .half-btn, .half-btn-left, .half-btn-left span {
             text-align: left;
         }
 
-        .nav-btn {
+        .nav-btn, .half-btn {
             -webkit-tap-highlight-color: transparent;
         }
     </style>
@@ -203,19 +277,28 @@
                 <span class="arrow">→</span>
             </a>
 
-            <!-- КНОПКА 3: Ссылка на каталог источников -->
-            <a href="#" target="_blank" class="nav-btn" id="sources-link">
-                <div class="btn-left">
-                    <i class="fas fa-book-open"></i>
-                    <span>Ссылка на каталог источников</span>
-                </div>
-                <span class="arrow">→</span>
-            </a>
+            <!-- КНОПКА 3: Две независимые кнопки (Дата-каталог + Инструкция) -->
+            <div class="double-button-container">
+                <a href="#" target="_blank" class="half-btn" id="catalog-link">
+                    <div class="half-btn-left">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Дата-каталог</span>
+                    </div>
+                    <span class="half-arrow">→</span>
+                </a>
+                <a href="#" target="_blank" class="half-btn" id="instruction-link">
+                    <div class="half-btn-left">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Инструкция</span>
+                    </div>
+                    <span class="half-arrow">→</span>
+                </a>
+            </div>
 
-            <!-- КНОПКА 4: Запрос доступа к отчётам -->
+            <!-- КНОПКА 4: Запрос доступа к отчётам (иконка ключа) -->
             <a href="#" target="_blank" class="nav-btn" id="access-link">
                 <div class="btn-left">
-                    <i class="fas fa-video"></i>
+                    <i class="fas fa-key"></i>
                     <span>Запрос доступа к отчётам</span>
                 </div>
                 <span class="arrow">→</span>
@@ -227,9 +310,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
     <script>
+        // Ссылки для обычных кнопок
         document.getElementById('faq-link').href = "https://disk.yandex.ru/i/XTMscW8SqARh2Q";
         document.getElementById('trainings-link').href = "https://disk.yandex.ru/d/YzsDEnbyIRhjWA";
-        document.getElementById('sources-link').href = "";
+        
+        // Ссылки для двух независимых кнопок (укажите свои URL)
+        document.getElementById('catalog-link').href = "#"; // Ссылка на дата-каталог отчетов
+        document.getElementById('instruction-link').href = "#"; // Ссылка на инструкцию к дата-каталогу
+        
+        // Ссылка для доступа к отчётам
         document.getElementById('access-link').href = "https://knowledge.our-intranet.ru/ru/group/obshchiy-sayt/content-view/-/kb_asset_publisher/contentView/content/id/5034274";
     </script>
 </body>
