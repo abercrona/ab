@@ -1,210 +1,288 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Навигация по разделам</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Навигация по разделам</title>
 
-        body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #0a0a1a;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .menu-container {
-            max-width: 700px;
-            width: 100%;
-            background: #0a0a1a;
-            border-radius: 2rem;
-            padding: 2.5rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: #0a0a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
 
-        h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            background: linear-gradient(120deg, #ffffff, #b9f3ff);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 1.5rem;
-        }
+.menu-container {
+    max-width: 700px;
+    width: 100%;
+    background: #0a0a1a;
+    border-radius: 2rem;
+    padding: 2.5rem;
+    box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+    text-align: center;
+}
 
-        .buttons-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(120deg,#ffffff,#b9f3ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 1.5rem;
+}
 
-        /* Кнопки — как во втором примере */
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #1e2a3a;
-            padding: 0.9rem 1.5rem;
-            border-radius: 1rem;
-            text-decoration: none;
-            color: #f0f4fa;
-            font-weight: 500;
-            font-size: 0.98rem;
-            transition: all 0.25s ease;
-            border: 1px solid #2d3e50;
-            cursor: pointer;
-            text-align: left;
-        }
+.buttons-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
-        .btn-left {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex: 1;
-        }
+/* Основные кнопки */
 
-        .btn-left span {
-            line-height: 1.3;
-        }
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1e2a3a;
+    padding: 0.9rem 1.5rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: #f0f4fa;
+    font-weight: 500;
+    font-size: 0.98rem;
+    transition: all 0.25s ease;
+    border: 1px solid #2d3e50;
+}
 
-        .btn-left i {
-            font-size: 1.25rem;
-            width: 28px;
-            color: #7bc5ff;
-            flex-shrink: 0;
-        }
+.btn-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
 
-        .arrow {
-            font-size: 1rem;
-            opacity: 0.8;
-            transition: transform 0.2s;
-            margin-left: 12px;
-            color: #b0c4de;
-        }
+.btn-left i {
+    font-size: 1.25rem;
+    width: 28px;
+    color: #7bc5ff;
+}
 
-        .nav-btn:hover {
-            background: #ffb347;
-            border-color: #ffcc88;
-            transform: translateX(5px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-            color: #0f1722;
-        }
+.arrow {
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: transform 0.2s;
+    margin-left: 12px;
+    color: #b0c4de;
+}
 
-        .nav-btn:hover .btn-left i {
-            color: #0f1722;
-        }
+.nav-btn:hover {
+    background: #ffb347;
+    border-color: #ffcc88;
+    transform: translateX(5px);
+    color: #0f1722;
+}
 
-        .nav-btn:hover .arrow {
-            transform: translateX(4px);
-            opacity: 1;
-            color: #1e2a2f;
-        }
+.nav-btn:hover i {
+    color: #0f1722;
+}
 
-        @media (max-width: 550px) {
-            .menu-container {
-                padding: 1.5rem;
-            }
-            .nav-btn {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.88rem;
-            }
-            .btn-left {
-                gap: 0.8rem;
-            }
-            .btn-left i {
-                font-size: 1.1rem;
-                width: 24px;
-            }
-            h1 {
-                font-size: 1.7rem;
-            }
-            .arrow {
-                font-size: 0.9rem;
-            }
-        }
+.nav-btn:hover .arrow {
+    transform: translateX(4px);
+    color: #1e2a2f;
+}
 
-        @media (max-width: 480px) {
-            .btn-left {
-                align-items: flex-start;
-            }
-            .btn-left span {
-                word-break: break-word;
-            }
-        }
+/* Двойная кнопка */
 
-        .nav-btn, .btn-left, .btn-left span {
-            text-align: left;
-        }
+.double-button-container {
+    display: flex;
+    gap: 0.9rem;
+    width: 100%;
+}
 
-        .nav-btn {
-            -webkit-tap-highlight-color: transparent;
-        }
-    </style>
+.half-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1e2a3a;
+    padding: 0.9rem 1rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: #f0f4fa;
+    font-weight: 500;
+    border: 1px solid #2d3e50;
+    transition: all 0.25s ease;
+}
+
+.half-btn-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.half-btn-left i {
+    font-size: 1.25rem;
+    width: 28px;
+    color: #7bc5ff;
+}
+
+.half-arrow {
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: transform 0.2s;
+    color: #b0c4de;
+}
+
+.half-btn:first-child:hover {
+    background: #ffb347;
+    transform: translateX(3px);
+    color: #0f1722;
+}
+
+.half-btn:last-child:hover {
+    background: #ffb347;
+    transform: translateX(-3px);
+    color: #0f1722;
+}
+
+.half-btn:hover i {
+    color: #0f1722;
+}
+
+.half-btn:hover .half-arrow {
+    transform: translateX(4px);
+}
+
+/* Mobile */
+
+@media (max-width:550px) {
+
+.menu-container {
+    padding:1.5rem;
+}
+
+.nav-btn,
+.half-btn {
+    padding:0.7rem 1rem;
+    font-size:0.88rem;
+}
+
+}
+</style>
 </head>
+
 <body>
-    <div class="menu-container">
-        <h1>База материалов</h1>
 
-        <div class="buttons-grid">
-            <a href="#" target="_blank" class="nav-btn" id="faq-link">
-                <div class="btn-left">
-                    <i class="fas fa-question-circle"></i>
-                    <span>FAQ</span>
-                </div>
-                <span class="arrow">→</span>
-            </a>
+<div class="menu-container">
 
-            <a href="#" target="_blank" class="nav-btn" id="rules-link">
-                <div class="btn-left">
-                    <i class="fas fa-gavel"></i>
-                    <span>Правила работы и разработки</span>
-                </div>
-                <span class="arrow">→</span>
-            </a>
+<h1>База материалов</h1>
 
-            <a href="#" target="_blank" class="nav-btn" id="trainings-link">
-                <div class="btn-left">
-                    <i class="fas fa-chalkboard-user"></i>
-                    <span>Тренинги</span>
-                </div>
-                <span class="arrow">→</span>
-            </a>
+<div class="buttons-grid">
 
-            <a href="#" target="_blank" class="nav-btn" id="instructions-link">
-                <div class="btn-left">
-                    <i class="fas fa-book-open"></i>
-                    <span>Инструкции по разработке</span>
-                </div>
-                <span class="arrow">→</span>
-            </a>
+<a href="#" target="_blank" class="nav-btn" id="faq-link">
+<div class="btn-left">
+<i class="fas fa-question-circle"></i>
+<span>FAQ</span>
+</div>
+<span class="arrow">→</span>
+</a>
 
-            <a href="#" target="_blank" class="nav-btn" id="videos-link">
-                <div class="btn-left">
-                    <i class="fas fa-video"></i>
-                    <span>Видео встреч комьюнити</span>
-                </div>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-    </div>
+<a href="#" target="_blank" class="nav-btn" id="rules-link">
+<div class="btn-left">
+<i class="fas fa-gavel"></i>
+<span>Правила работы и разработки</span>
+</div>
+<span class="arrow">→</span>
+</a>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<a href="#" target="_blank" class="nav-btn" id="trainings-link">
+<div class="btn-left">
+<i class="fas fa-chalkboard-user"></i>
+<span>Тренинги</span>
+</div>
+<span class="arrow">→</span>
+</a>
 
-    <script>
-        document.getElementById('faq-link').href = "https://disk.yandex.ru/i/WtQ176P4t6ro0A";
-        document.getElementById('rules-link').href = "https://disk.yandex.ru/d/7phBHCSejkhw4Q";
-        document.getElementById('trainings-link').href = "https://disk.yandex.ru/d/aWKAnfdmj4UkFQ";
-        document.getElementById('instructions-link').href = "https://disk.yandex.ru/d/kcFCSE79neHc1w";
-        document.getElementById('videos-link').href = "https://disk.yandex.ru/d/nOLF50xw41J1gg";
-    </script>
+<!-- ВСТАВЛЕННАЯ ДВОЙНАЯ КНОПКА -->
+
+<div class="double-button-container">
+
+<a href="#" target="_blank" class="half-btn" id="catalog-link">
+<div class="half-btn-left">
+<i class="fas fa-search"></i>
+<span>Поиск отчетов</span>
+</div>
+<span class="half-arrow">→</span>
+</a>
+
+<a href="#" target="_blank" class="half-btn" id="instruction-link">
+<div class="half-btn-left">
+<i class="fas fa-info-circle"></i>
+<span>Инструкция</span>
+</div>
+<span class="half-arrow">→</span>
+</a>
+
+</div>
+
+<a href="#" target="_blank" class="nav-btn" id="instructions-link">
+<div class="btn-left">
+<i class="fas fa-book-open"></i>
+<span>Инструкции по разработке</span>
+</div>
+<span class="arrow">→</span>
+</a>
+
+<a href="#" target="_blank" class="nav-btn" id="videos-link">
+<div class="btn-left">
+<i class="fas fa-video"></i>
+<span>Видео встреч комьюнити</span>
+</div>
+<span class="arrow">→</span>
+</a>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+<script>
+
+document.getElementById('faq-link').href =
+"https://disk.yandex.ru/i/WtQ176P4t6ro0A";
+
+document.getElementById('rules-link').href =
+"https://disk.yandex.ru/d/7phBHCSejkhw4Q";
+
+document.getElementById('trainings-link').href =
+"https://disk.yandex.ru/d/aWKAnfdmj4UkFQ";
+
+document.getElementById('instructions-link').href =
+"https://disk.yandex.ru/d/kcFCSE79neHc1w";
+
+document.getElementById('videos-link').href =
+"https://disk.yandex.ru/d/nOLF50xw41J1gg";
+
+/* новые ссылки */
+
+document.getElementById('catalog-link').href =
+"http://10.179.161.135:8585/";
+
+document.getElementById('instruction-link').href =
+"https://disk.yandex.ru/i/1mhl7_lX-F9GGw";
+
+</script>
+
 </body>
 </html>
