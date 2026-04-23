@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Навигация по разделам</title>
+    <title>Навигация по разделам — выделенный каталог</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #0a0a1a;  /* сплошной тёмный фон, без подложки */
+            background: #0a0a1a;  /* сплошной тёмный фон */
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -24,7 +24,7 @@
         .menu-container {
             max-width: 700px;
             width: 100%;
-            background: #0a0a1a;  /* единый глубокий цвет, без прозрачности и размытия */
+            background: #0a0a1a;
             border-radius: 2rem;
             padding: 2.5rem;
             box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
@@ -53,12 +53,12 @@
             gap: 1rem;
         }
 
-        /* Обычная кнопка — сплошной цвет, без прозрачности и blur */
+        /* Обычная кнопка — сплошной цвет, как в исходном первом блоке */
         .nav-btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #1e2a3a;     /* ровный тёмный цвет кнопок */
+            background: #1e2a3a;
             padding: 0.9rem 1.5rem;
             border-radius: 1rem;
             text-decoration: none;
@@ -118,15 +118,44 @@
             color: #1e2a2f;
         }
 
-        /* Контейнер для двух независимых кнопок */
-        .double-button-container {
+        /* ===== ВЫДЕЛЕННЫЙ БЛОК КАТАЛОГА (как во втором примере, но стилизован под единый дизайн) ===== */
+        .catalog-group {
+            background: rgba(30, 42, 58, 0.45);
+            border-radius: 1.2rem;
+            padding: 0.6rem 0.6rem 0.7rem 0.6rem;
+            border-left: 4px solid #ffb347;
+            transition: all 0.2s ease;
+            margin-bottom: 0.2rem;
+        }
+
+        .group-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffb347;
+            margin-bottom: 0.65rem;
+            margin-left: 0.75rem;
+            text-align: left;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .group-label i {
+            font-size: 0.75rem;
+            color: #ffb347;
+        }
+
+        /* Контейнер для двух кнопок (одинаковая ширина, как в "double-button-container" но с улучшенным выделением) */
+        .group-buttons {
             display: flex;
             gap: 0.9rem;
             width: 100%;
         }
 
-        /* Каждая половина — самостоятельная кнопка, без прозрачности */
-        .half-btn {
+        /* Кнопки внутри группы — сохраняют стиль обычных кнопок, но адаптированы под группу */
+        .group-btn {
             flex: 1;
             display: flex;
             align-items: center;
@@ -139,31 +168,26 @@
             font-weight: 500;
             font-size: 0.98rem;
             transition: all 0.25s ease;
-            border: 1px solid #2d3e50;
+            border: 1px solid #3a4c62;
             cursor: pointer;
             gap: 0.75rem;
         }
 
-        .half-btn-left {
+        .group-btn .btn-left {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.9rem;
             flex: 1;
         }
 
-        .half-btn-left i {
+        .group-btn i {
             font-size: 1.25rem;
             width: 28px;
             color: #7bc5ff;
             flex-shrink: 0;
         }
 
-        .half-btn-left span {
-            text-align: left;
-            line-height: 1.3;
-        }
-
-        .half-arrow {
+        .group-arrow {
             font-size: 1rem;
             opacity: 0.8;
             transition: transform 0.2s;
@@ -171,85 +195,78 @@
             color: #b0c4de;
         }
 
-        /* Ховер для левой кнопки */
-        .half-btn:first-child:hover {
+        /* Ховер для кнопок каталога — такой же яркий, как у обычных нав-кнопок */
+        .group-btn:hover {
             background: #ffb347;
             border-color: #ffcc88;
-            transform: translateX(3px);
+            transform: translateY(-2px);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
             color: #0f1722;
         }
 
-        /* Ховер для правой кнопки */
-        .half-btn:last-child:hover {
-            background: #ffb347;
-            border-color: #ffcc88;
-            transform: translateX(-3px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+        .group-btn:hover i {
             color: #0f1722;
         }
 
-        .half-btn:hover .half-btn-left i {
-            color: #0f1722;
-        }
-
-        .half-btn:hover .half-arrow {
+        .group-btn:hover .group-arrow {
             transform: translateX(4px);
             opacity: 1;
             color: #1e2a2f;
         }
 
+        /* Нижняя кнопка доступа остаётся в исходном стиле */
         .footer-note {
-            margin-top: 2rem;
+            margin-top: 1rem;
             font-size: 0.7rem;
             color: #5a6e85;
         }
 
+        /* Адаптивность: чтобы на мобильных группа кнопок каталога не ломалась */
         @media (max-width: 550px) {
             .menu-container {
                 padding: 1.5rem;
             }
-            .nav-btn, .half-btn {
+            .nav-btn, .group-btn {
                 padding: 0.7rem 1rem;
                 font-size: 0.88rem;
             }
-            .btn-left, .half-btn-left {
+            .btn-left, .group-btn .btn-left {
                 gap: 0.8rem;
             }
-            .btn-left i, .half-btn-left i {
+            .btn-left i, .group-btn i {
                 font-size: 1.1rem;
                 width: 24px;
             }
             h1 {
                 font-size: 1.7rem;
             }
-            .arrow, .half-arrow {
+            .arrow, .group-arrow {
                 font-size: 0.9rem;
             }
-            .double-button-container {
+            .group-buttons {
                 gap: 0.6rem;
             }
         }
 
         @media (max-width: 480px) {
-            .btn-left, .half-btn-left {
+            .btn-left, .group-btn .btn-left {
                 align-items: flex-start;
             }
-            .btn-left span, .half-btn-left span {
+            .btn-left span, .group-btn .btn-left span {
                 white-space: normal;
                 word-break: break-word;
             }
-            .half-btn {
-                padding: 0.7rem 0.8rem;
+            .group-buttons {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+            .catalog-group {
+                padding: 0.7rem;
             }
         }
 
-        .nav-btn, .btn-left, .btn-left span, .half-btn, .half-btn-left, .half-btn-left span {
+        .nav-btn, .btn-left, .btn-left span, .group-btn, .group-btn .btn-left {
             text-align: left;
-        }
-
-        .nav-btn, .half-btn {
-            -webkit-tap-highlight-color: transparent;
         }
     </style>
 </head>
@@ -258,7 +275,33 @@
         <h1>База материалов</h1>
 
         <div class="buttons-grid">
-            <!-- КНОПКА 1: FAQ -->
+            <!-- ⭐ ВЫДЕЛЕННЫЙ БЛОК КАТАЛОГА НАВЕРХУ — ИНСТРУКЦИЯ ТЕПЕРЬ ПЕРВАЯ -->
+            <div class="catalog-group">
+                <div class="group-label">
+                    <i class="fas fa-folder-open"></i>
+                    <span> КАТАЛОГ ОТЧЁТОВ</span>
+                </div>
+                <div class="group-buttons">
+                    <!-- Кнопка "Инструкция по каталогу" — теперь ПЕРВАЯ (слева) -->
+                    <a href="#" target="_blank" class="group-btn" id="instruction-link">
+                        <div class="btn-left">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Инструкция по каталогу</span>
+                        </div>
+                        <span class="group-arrow">→</span>
+                    </a>
+                    <!-- Кнопка "Каталог. Поиск отчётов" — теперь ВТОРАЯ (справа) -->
+                    <a href="#" target="_blank" class="group-btn" id="catalog-link">
+                        <div class="btn-left">
+                            <i class="fas fa-search"></i>
+                            <span>Каталог. Поиск отчётов</span>
+                        </div>
+                        <span class="group-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- КНОПКА 1: FAQ (оставлена без изменений) -->
             <a href="#" target="_blank" class="nav-btn" id="faq-link">
                 <div class="btn-left">
                     <i class="fas fa-question-circle"></i>
@@ -267,7 +310,7 @@
                 <span class="arrow">→</span>
             </a>
 
-            <!-- КНОПКА 2: Тренинги -->
+            <!-- КНОПКА 2: Тренинги (Как использовать Дельта BI) -->
             <a href="#" target="_blank" class="nav-btn" id="trainings-link">
                 <div class="btn-left">
                     <i class="fas fa-chalkboard-user"></i>
@@ -276,25 +319,7 @@
                 <span class="arrow">→</span>
             </a>
 
-            <!-- КНОПКА 3: Две независимые кнопки (Дата-каталог + Инструкция) -->
-            <div class="double-button-container">
-                <a href="#" target="_blank" class="half-btn" id="catalog-link">
-                    <div class="half-btn-left">
-                        <i class="fas fa-search"></i>
-                        <span>Поиск отчетов в Дельта BI</span>
-                    </div>
-                    <span class="half-arrow">→</span>
-                </a>
-                <a href="#" target="_blank" class="half-btn" id="instruction-link">
-                    <div class="half-btn-left">
-                        <i class="fas fa-info-circle"></i>
-                        <span>Инструкция</span>
-                    </div>
-                    <span class="half-arrow">→</span>
-                </a>
-            </div>
-
-            <!-- КНОПКА 4: Запрос доступа к отчётам (иконка ключа) -->
+            <!-- КНОПКА 3: Запрос доступа к отчётам (иконка ключа) -->
             <a href="#" target="_blank" class="nav-btn" id="access-link">
                 <div class="btn-left">
                     <i class="fas fa-key"></i>
@@ -303,19 +328,21 @@
                 <span class="arrow">→</span>
             </a>
         </div>
+        <div class="footer-note">Актуальные ссылки на документацию и BI-порталы</div>
     </div>
 
     <!-- Font Awesome для иконок -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
     <script>
-        // Ссылки для обычных кнопок
+        // СОХРАНЯЕМ ТОЧНО ТЕ ЖЕ ССЫЛКИ, ЧТО БЫЛИ В ПЕРВОМ ВАШЕМ КОДЕ (без изменений)
+        // Обычные кнопки
         document.getElementById('faq-link').href = "https://disk.yandex.ru/i/XTMscW8SqARh2Q";
         document.getElementById('trainings-link').href = "https://disk.yandex.ru/d/YzsDEnbyIRhjWA";
         
-        // Ссылки для двух независимых кнопок
-        document.getElementById('catalog-link').href = "http://10.179.161.135:8585/"; // Ссылка на дата-каталог отчетов
+        // Ссылки для двух независимых кнопок (теперь инструкция — первая, каталог — вторая)
         document.getElementById('instruction-link').href = "https://disk.yandex.ru/i/1mhl7_lX-F9GGw"; // Ссылка на инструкцию к дата-каталогу
+        document.getElementById('catalog-link').href = "http://10.179.161.135:8585/";   // Ссылка на дата-каталог отчетов
         
         // Ссылка для доступа к отчётам
         document.getElementById('access-link').href = "https://knowledge.our-intranet.ru/ru/group/obshchiy-sayt/content-view/-/kb_asset_publisher/contentView/content/id/5034274";
