@@ -13,44 +13,44 @@
 
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #0a0a1a;  /* сплошной тёмный фон */
+            background: #0a0a1a;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .menu-container {
-            max-width: 700px;
+            max-width: 500px;
             width: 100%;
             background: #0a0a1a;
-            border-radius: 2rem;
-            padding: 2.5rem;
+            border-radius: 1.2rem;
+            padding: 1.2rem;
             box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             background: linear-gradient(120deg, #ffffff, #b9f3ff);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .sub {
             color: #8e9cb0;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-size: 0.7rem;
         }
 
         .buttons-grid {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.6rem;
         }
 
         /* Обычная кнопка — сплошной цвет, как в исходном первом блоке */
@@ -59,12 +59,12 @@
             align-items: center;
             justify-content: space-between;
             background: #1e2a3a;
-            padding: 0.9rem 1.5rem;
-            border-radius: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.7rem;
             text-decoration: none;
             color: #f0f4fa;
             font-weight: 500;
-            font-size: 0.98rem;
+            font-size: 0.8rem;
             transition: all 0.25s ease;
             border: 1px solid #2d3e50;
             cursor: pointer;
@@ -74,7 +74,7 @@
         .btn-left {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.6rem;
             text-align: left;
             flex: 1;
         }
@@ -85,26 +85,26 @@
         }
 
         .btn-left i {
-            font-size: 1.25rem;
-            width: 28px;
+            font-size: 0.9rem;
+            width: 22px;
             color: #7bc5ff;
             flex-shrink: 0;
         }
 
         .arrow {
-            font-size: 1rem;
+            font-size: 0.8rem;
             opacity: 0.8;
             transition: transform 0.2s;
             flex-shrink: 0;
-            margin-left: 12px;
+            margin-left: 8px;
             color: #b0c4de;
         }
 
         .nav-btn:hover {
             background: #ffb347;
             border-color: #ffcc88;
-            transform: translateX(5px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+            transform: translateX(3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             color: #0f1722;
         }
 
@@ -113,94 +113,93 @@
         }
 
         .nav-btn:hover .arrow {
-            transform: translateX(4px);
+            transform: translateX(3px);
             opacity: 1;
             color: #1e2a2f;
         }
 
-        /* ===== ВЫДЕЛЕННЫЙ БЛОК КАТАЛОГА (как во втором примере, но стилизован под единый дизайн) ===== */
+        /* ===== ВЫДЕЛЕННЫЙ БЛОК КАТАЛОГА ===== */
         .catalog-group {
             background: rgba(30, 42, 58, 0.45);
-            border-radius: 1.2rem;
-            padding: 0.6rem 0.6rem 0.7rem 0.6rem;
-            border-left: 4px solid #ffb347;
+            border-radius: 0.9rem;
+            padding: 0.4rem 0.4rem 0.5rem 0.4rem;
+            border-left: 3px solid #ffb347;
             transition: all 0.2s ease;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
         }
 
         .group-label {
-            font-size: 0.7rem;
+            font-size: 0.55rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             color: #ffb347;
-            margin-bottom: 0.65rem;
-            margin-left: 0.75rem;
+            margin-bottom: 0.4rem;
+            margin-left: 0.5rem;
             text-align: left;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
         }
 
         .group-label i {
-            font-size: 0.75rem;
+            font-size: 0.6rem;
             color: #ffb347;
         }
 
-        /* Контейнер для двух кнопок (одинаковая ширина, как в "double-button-container" но с улучшенным выделением) */
+        /* Контейнер для двух кнопок */
         .group-buttons {
             display: flex;
-            gap: 0.9rem;
+            gap: 0.5rem;
             width: 100%;
         }
 
-        /* Кнопки внутри группы — сохраняют стиль обычных кнопок, но адаптированы под группу */
+        /* Кнопки внутри группы */
         .group-btn {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: space-between;
             background: #1e2a3a;
-            padding: 0.9rem 1rem;
-            border-radius: 1rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 0.7rem;
             text-decoration: none;
             color: #f0f4fa;
             font-weight: 500;
-            font-size: 0.98rem;
+            font-size: 0.75rem;
             transition: all 0.25s ease;
             border: 1px solid #3a4c62;
             cursor: pointer;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
         .group-btn .btn-left {
             display: flex;
             align-items: center;
-            gap: 0.9rem;
+            gap: 0.5rem;
             flex: 1;
         }
 
         .group-btn i {
-            font-size: 1.25rem;
-            width: 28px;
+            font-size: 0.85rem;
+            width: 22px;
             color: #7bc5ff;
             flex-shrink: 0;
         }
 
         .group-arrow {
-            font-size: 1rem;
+            font-size: 0.75rem;
             opacity: 0.8;
             transition: transform 0.2s;
             flex-shrink: 0;
             color: #b0c4de;
         }
 
-        /* Ховер для кнопок каталога — такой же яркий, как у обычных нав-кнопок */
         .group-btn:hover {
             background: #ffb347;
             border-color: #ffcc88;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             color: #0f1722;
         }
 
@@ -209,59 +208,55 @@
         }
 
         .group-btn:hover .group-arrow {
-            transform: translateX(4px);
+            transform: translateX(3px);
             opacity: 1;
             color: #1e2a2f;
         }
 
-        /* Нижняя кнопка доступа остаётся в исходном стиле */
         .footer-note {
-            margin-top: 1rem;
-            font-size: 0.7rem;
+            margin-top: 0.8rem;
+            font-size: 0.55rem;
             color: #5a6e85;
         }
 
-        /* Адаптивность: чтобы на мобильных группа кнопок каталога не ломалась */
+        /* Адаптивность */
         @media (max-width: 550px) {
             .menu-container {
-                padding: 1.5rem;
+                padding: 1rem;
             }
             .nav-btn, .group-btn {
-                padding: 0.7rem 1rem;
-                font-size: 0.88rem;
+                padding: 0.45rem 0.8rem;
+                font-size: 0.7rem;
             }
             .btn-left, .group-btn .btn-left {
-                gap: 0.8rem;
+                gap: 0.5rem;
             }
             .btn-left i, .group-btn i {
-                font-size: 1.1rem;
-                width: 24px;
+                font-size: 0.8rem;
+                width: 20px;
             }
             h1 {
-                font-size: 1.7rem;
+                font-size: 1.2rem;
             }
             .arrow, .group-arrow {
-                font-size: 0.9rem;
+                font-size: 0.7rem;
             }
             .group-buttons {
-                gap: 0.6rem;
+                gap: 0.4rem;
             }
         }
 
         @media (max-width: 480px) {
-            .btn-left, .group-btn .btn-left {
-                align-items: flex-start;
+            .group-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .catalog-group {
+                padding: 0.5rem;
             }
             .btn-left span, .group-btn .btn-left span {
                 white-space: normal;
                 word-break: break-word;
-            }
-            .group-buttons {
-                flex-direction: column;
-                gap: 0.7rem;
-            }
-            .catalog-group {
-                padding: 0.7rem;
             }
         }
 
@@ -274,14 +269,13 @@
     <div class="menu-container">
 
         <div class="buttons-grid">
-            <!-- ⭐ ВЫДЕЛЕННЫЙ БЛОК КАТАЛОГА НАВЕРХУ — ИНСТРУКЦИЯ ТЕПЕРЬ ПЕРВАЯ -->
+            <!-- ВЫДЕЛЕННЫЙ БЛОК КАТАЛОГА НАВЕРХУ -->
             <div class="catalog-group">
                 <div class="group-label">
                     <i class="fas fa-folder-open"></i>
-                    <span> КАТАЛОГ ОТЧЁТОВ</span>
+                    <span>КАТАЛОГ ОТЧЁТОВ</span>
                 </div>
                 <div class="group-buttons">
-                    <!-- Кнопка "Инструкция по каталогу" — теперь ПЕРВАЯ (слева) -->
                     <a href="#" target="_blank" class="group-btn" id="instruction-link">
                         <div class="btn-left">
                             <i class="fas fa-info-circle"></i>
@@ -289,7 +283,6 @@
                         </div>
                         <span class="group-arrow">→</span>
                     </a>
-                    <!-- Кнопка "Каталог. Поиск отчётов" — теперь ВТОРАЯ (справа) -->
                     <a href="#" target="_blank" class="group-btn" id="catalog-link">
                         <div class="btn-left">
                             <i class="fas fa-search"></i>
@@ -300,7 +293,7 @@
                 </div>
             </div>
 
-            <!-- КНОПКА 1: FAQ (оставлена без изменений) -->
+            <!-- КНОПКА 1: FAQ -->
             <a href="#" target="_blank" class="nav-btn" id="faq-link">
                 <div class="btn-left">
                     <i class="fas fa-question-circle"></i>
@@ -309,7 +302,7 @@
                 <span class="arrow">→</span>
             </a>
 
-            <!-- КНОПКА 2: Тренинги (Как использовать Дельта BI) -->
+            <!-- КНОПКА 2: Тренинги -->
             <a href="#" target="_blank" class="nav-btn" id="trainings-link">
                 <div class="btn-left">
                     <i class="fas fa-chalkboard-user"></i>
@@ -318,7 +311,7 @@
                 <span class="arrow">→</span>
             </a>
 
-            <!-- КНОПКА 3: Запрос доступа к отчётам (иконка ключа) -->
+            <!-- КНОПКА 3: Запрос доступа -->
             <a href="#" target="_blank" class="nav-btn" id="access-link">
                 <div class="btn-left">
                     <i class="fas fa-key"></i>
@@ -329,20 +322,13 @@
         </div>
     </div>
 
-    <!-- Font Awesome для иконок -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
     <script>
-        // СОХРАНЯЕМ ТОЧНО ТЕ ЖЕ ССЫЛКИ, ЧТО БЫЛИ В ПЕРВОМ ВАШЕМ КОДЕ (без изменений)
-        // Обычные кнопки
         document.getElementById('faq-link').href = "https://disk.yandex.ru/i/XTMscW8SqARh2Q";
         document.getElementById('trainings-link').href = "https://disk.yandex.ru/d/YzsDEnbyIRhjWA";
-        
-        // Ссылки для двух независимых кнопок (теперь инструкция — первая, каталог — вторая)
-        document.getElementById('instruction-link').href = "https://disk.yandex.ru/i/1mhl7_lX-F9GGw"; // Ссылка на инструкцию к дата-каталогу
-        document.getElementById('catalog-link').href = "http://10.179.161.135:8585/";   // Ссылка на дата-каталог отчетов
-        
-        // Ссылка для доступа к отчётам
+        document.getElementById('instruction-link').href = "https://disk.yandex.ru/i/1mhl7_lX-F9GGw";
+        document.getElementById('catalog-link').href = "http://10.179.161.135:8585/";
         document.getElementById('access-link').href = "https://knowledge.our-intranet.ru/ru/group/obshchiy-sayt/content-view/-/kb_asset_publisher/contentView/content/id/5034274";
     </script>
 </body>
