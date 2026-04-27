@@ -13,7 +13,8 @@
 
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #0a0a1a;
+            /* новая цветовая схема: серый фон, как во втором примере */
+            background: #535353;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -21,15 +22,6 @@
             padding: 1rem;
         }
 
-        .menu-container {
-            max-width: 500px;
-            width: 100%;
-            background: #0a0a1a;
-            border-radius: 1.2rem;
-            padding: 1.2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
 
         h1 {
             font-size: 1.3rem;
@@ -53,12 +45,12 @@
             gap: 0.6rem;
         }
 
-        /* Обычная кнопка — сплошной цвет, как в исходном первом блоке */
+        /* Обычная кнопка — сплошной цвет, обновлён по аналогии со вторым примером */
         .nav-btn {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #1e2a3a;
+            background: #474747;        /* цвет фона как во втором хабе */
             padding: 0.5rem 1rem;
             border-radius: 0.7rem;
             text-decoration: none;
@@ -66,7 +58,7 @@
             font-weight: 500;
             font-size: 0.8rem;
             transition: all 0.25s ease;
-            border: 1px solid #2d3e50;
+            border: 1px solid #404040;  /* тёмная граница */
             cursor: pointer;
             text-align: left;
         }
@@ -100,6 +92,7 @@
             color: #b0c4de;
         }
 
+        /* ховер — оранжевый акцент (как во втором примере) */
         .nav-btn:hover {
             background: #ffb347;
             border-color: #ffcc88;
@@ -118,9 +111,9 @@
             color: #1e2a2f;
         }
 
-        /* ===== ВЫДЕЛЕННЫЙ БЛОК КАТАЛОГА ===== */
+        /* ===== ВЫДЕЛЕННЫЙ БЛОК КАТАЛОГА (цвета приведены к гамме второго примера) ===== */
         .catalog-group {
-            background: rgba(30, 42, 58, 0.45);
+            background: rgba(71, 71, 71, 0.45);  /* полупрозрачный серый, как во втором хабе */
             border-radius: 0.9rem;
             padding: 0.4rem 0.4rem 0.5rem 0.4rem;
             border-left: 3px solid #ffb347;
@@ -132,7 +125,7 @@
             font-size: 0.55rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #ffb347;
+            color: #ffb347;               /* оранжевая метка */
             margin-bottom: 0.4rem;
             margin-left: 0.5rem;
             text-align: left;
@@ -144,7 +137,7 @@
 
         .group-label i {
             font-size: 0.6rem;
-            color: #ffb347;
+            color: #ffb347;               /* иконка тоже оранжевая */
         }
 
         /* Контейнер для двух кнопок */
@@ -154,13 +147,13 @@
             width: 100%;
         }
 
-        /* Кнопки внутри группы */
+        /* Кнопки внутри группы — стиль аналогичен основным, но с адаптивным поведением */
         .group-btn {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #1e2a3a;
+            background: #474747;
             padding: 0.5rem 0.8rem;
             border-radius: 0.7rem;
             text-decoration: none;
@@ -168,7 +161,7 @@
             font-weight: 500;
             font-size: 0.75rem;
             transition: all 0.25s ease;
-            border: 1px solid #3a4c62;
+            border: 1px solid #404040;
             cursor: pointer;
             gap: 0.5rem;
         }
@@ -195,6 +188,7 @@
             color: #b0c4de;
         }
 
+        /* ховер для кнопок внутри группы — оранжевый */
         .group-btn:hover {
             background: #ffb347;
             border-color: #ffcc88;
@@ -219,7 +213,7 @@
             color: #5a6e85;
         }
 
-        /* Адаптивность */
+        /* Адаптивность (полностью сохранена из исходного хаба) */
         @media (max-width: 550px) {
             .menu-container {
                 padding: 1rem;
@@ -325,6 +319,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
     <script>
+        // Все ссылки остаются без изменений (рабочие)
         document.getElementById('faq-link').href = "https://disk.yandex.ru/i/XTMscW8SqARh2Q";
         document.getElementById('trainings-link').href = "https://disk.yandex.ru/d/YzsDEnbyIRhjWA";
         document.getElementById('instruction-link').href = "https://disk.yandex.ru/i/1mhl7_lX-F9GGw";
